@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>All Courses - Glamour School of Beauty</title>
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{primary:'#C25B87',secondary:'#4A3434'},borderRadius:{'none':'0px','sm':'4px',DEFAULT:'8px','md':'12px','lg':'16px','xl':'20px','2xl':'24px','3xl':'32px','full':'9999px','button':'8px'}}}}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.min.css">
+<style>
+:where([class^="ri-"])::before { content: "\f3c2"; }
+body {
+font-family: 'Montserrat', sans-serif;
+}
+.hero-section {
+background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://readdy.ai/api/search-image?query=elegant%2520beauty%2520salon%2520interior%2520with%2520makeup%2520stations%2520and%2520beauty%2520training%2520equipment%252C%2520professional%2520beauty%2520school%2520with%2520pink%2520and%2520brown%2520color%2520scheme%252C%2520soft%2520lighting%252C%2520high-end%2520beauty%2520academy%2520with%2520training%2520materials%2520displayed&width=1920&height=600&seq=20&orientation=landscape');
+background-size: cover;
+background-position: center;
+}
+.cursive-font {
+font-family: 'Playfair Display', serif;
+}
+.course-card:hover {
+transform: translateY(-5px);
+box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.footer-gradient {
+background: linear-gradient(135deg, #4A3434 0%, #C25B87 100%);
+}
+.custom-checkbox {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #C25B87;
+border-radius: 4px;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-checkbox:checked {
+background-color: #C25B87;
+}
+.custom-checkbox:checked::after {
+content: "";
+position: absolute;
+top: 2px;
+left: 6px;
+width: 6px;
+height: 10px;
+border: solid white;
+border-width: 0 2px 2px 0;
+transform: rotate(45deg);
+}
+.custom-radio {
+appearance: none;
+-webkit-appearance: none;
+width: 20px;
+height: 20px;
+border: 2px solid #C25B87;
+border-radius: 50%;
+outline: none;
+cursor: pointer;
+position: relative;
+}
+.custom-radio:checked {
+border-color: #C25B87;
+}
+.custom-radio:checked::after {
+content: "";
+position: absolute;
+top: 3px;
+left: 3px;
+width: 10px;
+height: 10px;
+border-radius: 50%;
+background-color: #C25B87;
+}
+.range-slider {
+-webkit-appearance: none;
+width: 100%;
+height: 6px;
+border-radius: 5px;
+background: #e0e0e0;
+outline: none;
+}
+.range-slider::-webkit-slider-thumb {
+-webkit-appearance: none;
+appearance: none;
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #C25B87;
+cursor: pointer;
+}
+.range-slider::-moz-range-thumb {
+width: 20px;
+height: 20px;
+border-radius: 50%;
+background: #C25B87;
+cursor: pointer;
+border: none;
+}
+</style>
+</head>
+<body class="bg-gray-50">
+<!-- Navigation -->
+<nav class="bg-white shadow-md sticky top-0 z-50">
+<div class="container mx-auto px-4 py-3">
+<div class="flex justify-between items-center">
+<a href="https://readdy.ai/home/6a9522a2-5cf8-4710-b262-d20fc3e80646/6ec38e09-b376-46eb-9397-474b4b9793d4" data-readdy="true" class="flex items-center">
+<span class="font-['Pacifico'] text-3xl text-primary">Glamour</span>
+<span class="ml-2 text-secondary font-semibold">SCHOOL OF BEAUTY</span>
+</a>
+<div class="hidden md:flex space-x-8">
+<a href="https://readdy.ai/home/6a9522a2-5cf8-4710-b262-d20fc3e80646/6ec38e09-b376-46eb-9397-474b4b9793d4" data-readdy="true" class="text-secondary hover:text-primary font-medium">Home</a>
+<a href="#" class="text-primary font-medium border-b-2 border-primary">Courses</a>
+<a href="https://readdy.ai/home/6a9522a2-5cf8-4710-b262-d20fc3e80646/6ec38e09-b376-46eb-9397-474b4b9793d4" data-readdy="true" class="text-secondary hover:text-primary font-medium">Services</a>
+<a href="#" class="text-secondary hover:text-primary font-medium">About Us</a>
+<a href="#" class="text-secondary hover:text-primary font-medium">Contact</a>
+</div>
+<div class="md:hidden flex items-center">
+<button class="text-secondary p-2 rounded-full">
+<div class="w-8 h-8 flex items-center justify-center">
+<i class="ri-menu-line ri-lg"></i>
+</div>
+</button>
+</div>
+<div class="hidden md:block">
+<a href="#" class="bg-primary text-white px-6 py-2 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition">Book Now</a>
+</div>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<section class="hero-section py-20">
+<div class="container mx-auto px-4">
+<div class="max-w-3xl mx-auto text-center text-white">
+<h1 class="text-5xl font-bold mb-4 cursive-font">All Courses</h1>
+<p class="text-xl mb-6">Explore our comprehensive range of beauty courses designed to transform your passion into profession</p>
+<div class="flex justify-center">
+<a href="https://readdy.ai/home/6a9522a2-5cf8-4710-b262-d20fc3e80646/6ec38e09-b376-46eb-9397-474b4b9793d4" data-readdy="true" class="flex items-center text-white hover:text-gray-200 transition">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-left-line"></i>
+</div>
+<span class="ml-2">Back to Home</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Filters Section -->
+<section class="py-8 bg-white border-b">
+<div class="container mx-auto px-4">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
+<div class="w-full md:w-auto">
+<div class="relative">
+<input type="text" placeholder="Search courses..." class="w-full md:w-80 pl-10 pr-4 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
+<div class="absolute left-3 top-1/2 transform -translate-y-1/2">
+<div class="w-5 h-5 flex items-center justify-center text-gray-500">
+<i class="ri-search-line"></i>
+</div>
+</div>
+</div>
+</div>
+<div class="flex flex-wrap gap-4 w-full md:w-auto">
+<div class="relative">
+<button class="flex items-center justify-between w-full md:w-40 px-4 py-2 bg-white border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
+<span>Category</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</button>
+</div>
+<div class="relative">
+<button class="flex items-center justify-between w-full md:w-40 px-4 py-2 bg-white border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
+<span>Duration</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</button>
+</div>
+<div class="relative">
+<button class="flex items-center justify-between w-full md:w-40 px-4 py-2 bg-white border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-primary">
+<span>Price Range</span>
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-arrow-down-s-line"></i>
+</div>
+</button>
+</div>
+<button class="px-4 py-2 bg-primary text-white !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition">
+Apply Filters
+</button>
+</div>
+</div>
+</div>
+</section>
+<!-- Course Categories -->
+<section class="py-12 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="mb-10">
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font">Course Categories</h2>
+<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+<button class="flex items-center justify-center bg-primary text-white px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition">
+All Courses
+</button>
+<button class="flex items-center justify-center bg-white text-secondary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition border border-gray-200">
+Makeup
+</button>
+<button class="flex items-center justify-center bg-white text-secondary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition border border-gray-200">
+Hair
+</button>
+<button class="flex items-center justify-center bg-white text-secondary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition border border-gray-200">
+Nails
+</button>
+<button class="flex items-center justify-center bg-white text-secondary px-6 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-gray-100 transition border border-gray-200">
+Special Skills
+</button>
+</div>
+</div>
+<!-- Makeup Courses -->
+<div class="mb-16">
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font">Makeup Courses</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=professional%2520makeup%2520artist%2520teaching%2520students%252C%2520beauty%2520school%2520training%252C%2520makeup%2520course%2520with%2520brushes%2520and%2520cosmetics%252C%2520elegant%2520classroom%2520setting%2520with%2520pink%2520accents&width=600&height=400&seq=21&orientation=landscape" alt="Makeup Artistry Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Basic Makeup Artistry</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">1 Week</span>
+</div>
+<p class="text-gray-600 mb-4">Learn the fundamentals of makeup application including skin preparation, foundation matching, and basic eye techniques.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Certificate Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=advanced%2520makeup%2520techniques%2520being%2520taught%2520in%2520beauty%2520school%252C%2520professional%2520makeup%2520training%2520with%2520special%2520effects%252C%2520elegant%2520classroom%2520with%2520pink%2520and%2520brown%2520decor&width=600&height=400&seq=22&orientation=landscape" alt="Advanced Makeup Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Advanced Makeup Artistry</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R1400</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">2 Weeks</span>
+</div>
+<p class="text-gray-600 mb-4">Master advanced techniques including contouring, highlighting, cut crease eyeshadow, and special occasion makeup.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Certificate Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=bridal%2520makeup%2520class%2520in%2520beauty%2520school%252C%2520professional%2520wedding%2520makeup%2520training%252C%2520elegant%2520classroom%2520with%2520pink%2520and%2520brown%2520decor&width=600&height=400&seq=23&orientation=landscape" alt="Bridal Makeup Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Bridal Makeup Specialist</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R2100</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">3 Weeks</span>
+</div>
+<p class="text-gray-600 mb-4">Comprehensive training in bridal and special occasion makeup, including client consultation, photography-ready techniques, and business skills.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Certificate Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Hair Courses -->
+<div class="mb-16">
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font">Hair Courses</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=natural%2520hair%2520styling%2520class%252C%2520students%2520learning%2520hair%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=24&orientation=landscape" alt="Natural Hair Combo Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Natural Hair Combo</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">1 Day</span>
+</div>
+<p class="text-gray-600 mb-4">Learn techniques for washing, relaxing, blow drying and treating natural hair. All training materials provided in class.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Certificate Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=bridal%2520hairstyling%2520class%252C%2520students%2520learning%2520wedding%2520hair%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=25&orientation=landscape" alt="Bridal Hairstyling Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Bridal Hairstyling</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R1200</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">2 Days</span>
+</div>
+<p class="text-gray-600 mb-4">Master bridal hairstyling techniques including natural hair styling, relaxing, gel application and formal updo styles. No kit needed.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">No Kit Needed</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=brazilian%2520wig%2520styling%2520class%252C%2520students%2520learning%2520wig%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=26&orientation=landscape" alt="Brazilian Wig Bridal Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Brazilian Wig Bridal Hairstyling</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R1500</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">2 Days</span>
+</div>
+<p class="text-gray-600 mb-4">Specialized training in styling Brazilian wigs for bridal occasions. Learn cutting, shaping, and styling techniques for perfect bridal looks.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">No Kit Needed</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Special Skills Courses -->
+<div class="mb-16">
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font">Special Skills Courses</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=cluster%2520lashes%2520training%2520class%252C%2520students%2520learning%2520eyelash%2520extension%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=27&orientation=landscape" alt="Cluster Lashes Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Cluster Lashes</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">2 Days</span>
+</div>
+<p class="text-gray-600 mb-4">Learn professional cluster lash application techniques. In-class training materials will be provided for hands-on practice.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Materials Provided</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=massage%2520therapy%2520training%2520class%252C%2520students%2520learning%2520massage%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=28&orientation=landscape" alt="Massage Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Massage</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">1 Day</span>
+</div>
+<p class="text-gray-600 mb-4">Learn basic massage techniques and protocols. In-class training materials will be provided for hands-on practice sessions.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Materials Provided</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=dermaplanning%2520facial%2520treatment%2520training%2520class%252C%2520students%2520learning%2520skin%2520care%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=29&orientation=landscape" alt="Dermaplanning Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Dermaplanning</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">1 Day</span>
+</div>
+<p class="text-gray-600 mb-4">Master the technique of dermaplanning for exfoliation and skin rejuvenation. In-class training materials will be provided.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Materials Provided</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Beauty Enhancement Courses -->
+<div class="mb-16">
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font">Beauty Enhancement Courses</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=waxing%2520training%2520class%252C%2520students%2520learning%2520hair%2520removal%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=30&orientation=landscape" alt="Waxing Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Waxing</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">1 Day</span>
+</div>
+<p class="text-gray-600 mb-4">Learn professional waxing techniques for various body areas. In-class training materials will be provided for practice.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Materials Provided</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=eyebrow%2520tinting%2520class%252C%2520students%2520learning%2520eyebrow%2520coloring%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=31&orientation=landscape" alt="Eyebrow Tint Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Eyebrow Tint</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">1 Day</span>
+</div>
+<p class="text-gray-600 mb-4">Master the art of eyebrow tinting for enhanced definition. In-class training materials will be provided for hands-on practice.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Materials Provided</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=eyebrow%2520lamination%2520class%252C%2520students%2520learning%2520brow%2520styling%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=32&orientation=landscape" alt="Eyebrow Lamination Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Eyebrow Lamination</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">1 Day</span>
+</div>
+<p class="text-gray-600 mb-4">Learn the popular eyebrow lamination technique for perfectly styled brows. In-class training materials will be provided.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Materials Provided</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Installation Courses -->
+<div class="mb-16">
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font">Installation Courses</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300 relative">
+<div class="absolute top-4 right-4 bg-primary text-white text-sm px-3 py-1 rounded-full z-10">
+Special Offer
+</div>
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=hair%2520installation%2520combo%2520class%252C%2520students%2520learning%2520advanced%2520hair%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=33&orientation=landscape" alt="Installation Combo Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Full Installation Combo</h3>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-primary font-semibold">R2500</span>
+<span class="text-gray-400 text-sm line-through ml-2">R3000</span>
+</div>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">5 Days</span>
+</div>
+<p class="text-gray-600 mb-4">Comprehensive training in basic installation, styling, customization, treatment, and bleaching knots. Includes free installation kit.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Free Kit Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=basic%2520hair%2520installation%2520class%252C%2520students%2520learning%2520hair%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=34&orientation=landscape" alt="Basic Installation Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Basic Installation</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">1 Day</span>
+</div>
+<p class="text-gray-600 mb-4">Learn fundamental hair installation techniques. Perfect for beginners wanting to start in the hair extension industry.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Certificate Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=brazilian%2520bridal%2520hairstyling%2520class%252C%2520students%2520learning%2520wedding%2520hair%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=35&orientation=landscape" alt="Brazilian Bridal Hairstyling Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Brazilian Bridal Hairstyling</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R1500</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">2 Days</span>
+</div>
+<p class="text-gray-600 mb-4">Specialized training in Brazilian bridal hairstyling techniques. Learn to create elegant and sophisticated bridal looks.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Certificate Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Specialty Courses -->
+<div>
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font">Specialty Courses</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Course 1 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=microblading%2520class%252C%2520students%2520learning%2520eyebrow%2520tattooing%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=36&orientation=landscape" alt="Microblading Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Microblading</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R3700</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">Kit Included</span>
+</div>
+<p class="text-gray-600 mb-4">Learn the art of semi-permanent eyebrow enhancement. Course includes a professional kit sufficient for 7-9 clients to jumpstart your business.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Free Kit Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 2 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=cake%2520baking%2520class%252C%2520students%2520learning%2520baking%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme%252C%2520beautiful%2520decorated%2520cakes&width=600&height=400&seq=37&orientation=landscape" alt="Cake Baking Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Cake Baking</h3>
+<div class="flex justify-between items-center mb-4">
+<span class="text-primary font-semibold">R2000</span>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">3 Days</span>
+</div>
+<p class="text-gray-600 mb-4">Master the art of cake baking and decoration. All materials provided in class, and you get to take your finished cake home. Available at both locations.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Materials Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+<!-- Course 3 -->
+<div class="bg-white rounded-lg shadow-lg overflow-hidden course-card transition-all duration-300">
+<div class="h-64 overflow-hidden">
+<img src="https://readdy.ai/api/search-image?query=hairdressing%2520class%252C%2520students%2520learning%2520cutting%2520and%2520styling%2520techniques%252C%2520beauty%2520school%2520with%2520elegant%2520classroom%2520setting%252C%2520pink%2520and%2520brown%2520color%2520scheme&width=600&height=400&seq=38&orientation=landscape" alt="Hairdressing Course" class="w-full h-full object-cover object-top">
+</div>
+<div class="p-6">
+<h3 class="text-xl font-bold text-secondary mb-2">Hairdressing - Beginner</h3>
+<div class="flex justify-between items-center mb-4">
+<div>
+<span class="text-primary font-semibold">R2500</span>
+<span class="text-gray-400 text-sm line-through ml-2">R3000</span>
+</div>
+<span class="bg-secondary text-white text-sm px-3 py-1 rounded-full">3 Weeks</span>
+</div>
+<p class="text-gray-600 mb-4">Comprehensive training in cutting, styling, coloring, and treating hair. Includes free hairpiece and hands-on practice with real clients.</p>
+<div class="flex justify-between items-center">
+<span class="text-sm text-gray-500">Free Hairpiece Included</span>
+<a href="#" class="text-primary font-medium flex items-center">
+View Details
+<div class="w-5 h-5 ml-1 flex items-center justify-center">
+<i class="ri-arrow-right-line"></i>
+</div>
+</a>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Registration Info -->
+<section class="py-12 bg-white">
+<div class="container mx-auto px-4">
+<div class="max-w-4xl mx-auto bg-secondary bg-opacity-10 p-8 rounded-lg">
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font text-center">Registration Information</h2>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h3 class="text-xl font-bold text-secondary mb-4">Required Fees</h3>
+<ul class="space-y-3">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="ml-2">Registration Fee: R300 (payable once per month)</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="ml-2">Uniform T-shirt: R150</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="ml-2">Scrub: R250</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="ml-2">Graduation Fee: R450</span>
+</li>
+</ul>
+</div>
+<div>
+<h3 class="text-xl font-bold text-secondary mb-4">Course Kits</h3>
+<ul class="space-y-3">
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="ml-2">Small Kit: R550</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="ml-2">Medium Kit: R850</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-check-line"></i>
+</div>
+<span class="ml-2">Big Kit: R1600</span>
+</li>
+<li class="flex items-center">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-information-line"></i>
+</div>
+<span class="ml-2">Some courses include free kits (as specified)</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="mt-8 bg-primary bg-opacity-10 p-4 rounded-lg">
+<h3 class="text-xl font-bold text-primary mb-2 text-center">SPECIAL OFFER:</h3>
+<p class="text-center">Any course from the Makeup, Manicure or Wig Making for 1 month is R3000 including medium kit (Save R950!!)</p>
+</div>
+<div class="mt-8 text-center">
+<a href="#" class="bg-primary text-white px-8 py-3 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition inline-block">Register Now</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact & Locations -->
+<section class="py-12 bg-gray-50">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div>
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font">Our Locations</h2>
+<div class="bg-white p-6 rounded-lg shadow-md mb-6">
+<h3 class="text-xl font-bold text-secondary mb-4">Seshego Branch</h3>
+<p class="text-gray-600 mb-4">Seshego Zone 2 Dishopong, next to Lebowa funerals, opposite Masedibu high school</p>
+<div class="flex items-center text-primary">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="ml-2">Get Directions</span>
+</div>
+</div>
+<div class="bg-white p-6 rounded-lg shadow-md">
+<h3 class="text-xl font-bold text-secondary mb-4">Mokopane Branch</h3>
+<p class="text-gray-600 mb-4">Mokopane in town at shop 60H, Pretorius street, near Hebron opposite Strands stationery</p>
+<div class="flex items-center text-primary">
+<div class="w-5 h-5 flex items-center justify-center">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="ml-2">Get Directions</span>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-3xl font-bold text-secondary mb-6 cursive-font">Contact Us</h2>
+<div class="bg-white p-6 rounded-lg shadow-md">
+<p class="text-gray-600 mb-6">Have questions about our courses? Contact us for more information or to schedule a visit.</p>
+<div class="space-y-4 mb-6">
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-phone-line"></i>
+</div>
+</div>
+<div class="ml-4">
+<h4 class="font-bold text-secondary">Phone:</h4>
+<p class="text-gray-600">064 610 4903</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-whatsapp-line"></i>
+</div>
+</div>
+<div class="ml-4">
+<h4 class="font-bold text-secondary">WhatsApp:</h4>
+<p class="text-gray-600">068 059 6815</p>
+</div>
+</div>
+<div class="flex items-start">
+<div class="w-10 h-10 flex items-center justify-center bg-primary bg-opacity-10 rounded-full">
+<div class="w-5 h-5 flex items-center justify-center text-primary">
+<i class="ri-mail-line"></i>
+</div>
+</div>
+<div class="ml-4">
+<h4 class="font-bold text-secondary">Email:</h4>
+<p class="text-gray-600">mokadikgopa@gmail.com</p>
+</div>
+</div>
+</div>
+<a href="https://wa.me/27680596815" class="flex items-center justify-center bg-green-500 text-white py-3 !rounded-button whitespace-nowrap font-medium hover:bg-opacity-90 transition w-full">
+<div class="w-5 h-5 mr-2 flex items-center justify-center">
+<i class="ri-whatsapp-fill"></i>
+</div>
+WhatsApp Us
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="footer-gradient text-white py-12">
+<div class="container mx-auto px-4">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+<div>
+<a href="#" class="flex items-center mb-4">
+<span class="font-['Pacifico'] text-3xl">Glamour</span>
+<span class="ml-2 font-semibold">SCHOOL OF BEAUTY</span>
+</a>
+<p class="mb-4">South Africa's premier beauty education center offering professional courses and services.</p>
+<p>NB: We are a Zero accredited school for personal, business and skill development.</p>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Quick Links</h4>
+<ul class="space-y-2">
+<li><a href="https://readdy.ai/home/6a9522a2-5cf8-4710-b262-d20fc3e80646/6ec38e09-b376-46eb-9397-474b4b9793d4" data-readdy="true" class="hover:text-gray-300 transition">Home</a></li>
+<li><a href="#" class="hover:text-gray-300 transition">Courses</a></li>
+<li><a href="#" class="hover:text-gray-300 transition">Services</a></li>
+<li><a href="#" class="hover:text-gray-300 transition">About Us</a></li>
+<li><a href="#" class="hover:text-gray-300 transition">Contact</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Course Categories</h4>
+<ul class="space-y-2">
+<li><a href="#" class="hover:text-gray-300 transition">Makeup Courses</a></li>
+<li><a href="#" class="hover:text-gray-300 transition">Hair Courses</a></li>
+<li><a href="#" class="hover:text-gray-300 transition">Special Skills</a></li>
+<li><a href="#" class="hover:text-gray-300 transition">Beauty Enhancement</a></li>
+<li><a href="#" class="hover:text-gray-300 transition">Installation Courses</a></li>
+<li><a href="#" class="hover:text-gray-300 transition">Specialty Courses</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-xl font-bold mb-4">Contact Info</h4>
+<ul class="space-y-2">
+<li class="flex items-start">
+<div class="w-5 h-5 mt-1 flex items-center justify-center">
+<i class="ri-map-pin-line"></i>
+</div>
+<span class="ml-2">13 Tokyo Sexwale Ave, Seshego-B, Polokwane, 0700</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 mt-1 flex items-center justify-center">
+<i class="ri-phone-line"></i>
+</div>
+<span class="ml-2">064 610 4903</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 mt-1 flex items-center justify-center">
+<i class="ri-whatsapp-line"></i>
+</div>
+<span class="ml-2">068 059 6815</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 mt-1 flex items-center justify-center">
+<i class="ri-mail-line"></i>
+</div>
+<span class="ml-2">mokadikgopa@gmail.com</span>
+</li>
+<li class="flex items-start">
+<div class="w-5 h-5 mt-1 flex items-center justify-center">
+<i class="ri-time-line"></i>
+</div>
+<span class="ml-2">Mon-Fri: 9am - 5pm</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="border-t border-white border-opacity-20 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
+<p>&copy; 2025 Glamour School of Beauty. All rights reserved.</p>
+<div class="flex space-x-4 mt-4 md:mt-0">
+<a href="#" class="hover:text-gray-300 transition">Privacy Policy</a>
+<a href="#" class="hover:text-gray-300 transition">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+// Mobile menu toggle
+const menuButton = document.querySelector('.md\\:hidden button');
+const mobileMenu = document.querySelector('.md\\:flex.space-x-8');
+if (menuButton && mobileMenu) {
+menuButton.addEventListener('click', function() {
+if (mobileMenu.classList.contains('hidden')) {
+mobileMenu.classList.remove('hidden');
+mobileMenu.classList.add('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'shadow-md', 'p-4', 'space-y-4', 'space-x-0', 'z-50');
+} else {
+mobileMenu.classList.add('hidden');
+mobileMenu.classList.remove('flex', 'flex-col', 'absolute', 'top-16', 'left-0', 'right-0', 'bg-white', 'shadow-md', 'p-4', 'space-y-4', 'space-x-0', 'z-50');
+}
+});
+}
+// Filter dropdowns
+const filterButtons = document.querySelectorAll('.filter-button');
+filterButtons.forEach(button => {
+button.addEventListener('click', function() {
+const dropdown = this.nextElementSibling;
+if (dropdown.classList.contains('hidden')) {
+dropdown.classList.remove('hidden');
+} else {
+dropdown.classList.add('hidden');
+}
+});
+});
+// Price range slider
+const priceSlider = document.getElementById('price-range');
+const priceValue = document.getElementById('price-value');
+if (priceSlider && priceValue) {
+priceSlider.addEventListener('input', function() {
+priceValue.textContent = `R${this.value}`;
+});
+}
+});
+</script>
+</body>
+</html>
